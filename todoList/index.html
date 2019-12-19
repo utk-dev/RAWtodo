@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo.app</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Todo.App</h1>
+        <h4>A todo list app</h4>
+    </header>
+    <nav>
+        <h3 id="taskListHeading">Task List</h3>
+        <span id="noTasks">No Tasks</span>
+        <ol id="taskList">
+        </ol>
+        <button id="addNewButton">Add New</button>
+    </nav>
+    <main>
+        <section id="empty">
+            <h2>Todo.app</h2>
+        </section>
+        <section id="addNewTask" class="hide">
+            <h2>Add New Task</h2>
+            <form id="form" action="som.html">
+                <label for="tname" id="tnameLabel">Task Name:</label>
+                <input type="text" name="name" id="tname" required>
+
+                <label for="tdesc" id="tdescLabel">Description:</label>
+                <textarea id="tdesc"></textarea>
+                <button type="submit" id="submit">Add</button>
+            </form>
+        </section>
+        <section id="taskView" class="hide">
+            <h2 id="dispName"></h2>
+            <p id="dispDesc"></p>
+            <button id="markAsDone" data-id="">mark as <span id="mark">done</span></button>
+        </section>
+    </main>
+    <footer>
+        <h2>Pending Tasks: <span id="pendingCount">0</span></h2>
+    </footer>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

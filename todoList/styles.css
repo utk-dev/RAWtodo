@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Ubuntu, 'Segoe UI', sans-serif;
+    font-weight: 200;
+    display: grid;
+    grid-template-rows: minmax(105px, 15%) auto 10%;
+    grid-template-columns: minmax(200px, 20%) 80%;
+    grid-template-areas: "header header"
+                         "nav main"
+                         "nav footer";
+}
+
+header, footer, main, nav {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.hide {
+    display: none !important;
+}
+
+#empty {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#empty > h2 {
+    color: lightgray;
+    font-size: 4em;
+}
+
+header {
+    grid-area: header;
+    color: mediumslateblue;
+    background: rgb(60, 54, 92);
+}
+
+h2, h3, h4 {
+    font-weight: 400;
+}
+
+h4 {
+    margin-top: -25px;
+}
+
+#noTasks {
+    color: white;
+}
+
+header > h1 {
+    margin-top: 2px;
+    font-weight: 300;
+    font-size: 3.5em;
+}
+
+nav {
+    background-color: mediumslateblue;
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    text-align: justify;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+button {
+    padding: 6px;
+    background: slateblue;
+    color: white;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 4px lightgray;
+}
+
+button:hover {
+    border-color: mediumslateblue;
+}
+
+button:active {
+    background-color: white;
+    color: slateblue;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 10% 50% auto;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas: "nameLabel name ."
+                         "descLabel desc ."
+                         ". submit .";
+}
+
+#addNewButton {
+    padding: 10px;
+}
+
+input[type="text"], textarea {
+    font-size: 1.1em;
+    font-family: "Ubuntu", "Segoe UI";
+    font-weight: 100;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#tnameLabel { grid-area: nameLabel; }
+#tname { grid-area: name; }
+#tdescLabel { grid-area: descLabel; 
+}
+#tdesc { 
+    grid-area: desc;
+    width: 100%;
+    height: 90%;
+     -webkit-box-sizing: border-box; 
+     -moz-box-sizing: border-box;    
+     box-sizing: border-box;         
+}
+#submit { grid-area: submit; }
+
+form > label {
+    margin-top: 1.5em;
+}
+
+form > textarea {
+    margin-top: 1em;
+}
+
+#submit {
+    margin-top: 1.5em;
+    max-width: 100px;
+}
+
+nav > ol > li {
+    color: white;
+    padding-bottom: 0.5em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+#noTasks {
+    display: none;
+}
+
+#taskListHeading {
+    color: white;
+}
+
+
+@media (max-width: 800px) {
+    body {
+        grid-template-rows: 15% 10% auto 10%;
+        grid-template-columns: 100%;
+        grid-template-areas: "header"
+                             "nav"
+                             "main"
+                             "footer";
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr 1fr 4fr 1fr;
+        grid-template-areas: "nameLabel"
+                             "name"
+                             "descLabel" "desc"
+                             "submit";
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav > ol {
+        padding-left: 0;
+        display: flex;
+        max-width: 80%;
+        overflow-x: auto;
+    }
+
+    nav > ol > li {
+        padding: 1em 1.5em;
+        list-style-type: none;
+    }
+
+    nav > ol > li:not(:last-child) {
+       border-right: 1px solid rgb(209, 202, 255);
+    }
+
+    nav > ol > li:first-child {
+        padding-left: 0;
+    }
+
+    nav > ol > li {
+        color: white;
+        padding: 1em 0.4em;
+    }
+
+    #taskListHeading {
+        display: none;
+    }
+
+    #noTasks {
+        display: inline;
+    }
+}
+
