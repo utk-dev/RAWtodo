@@ -4,7 +4,7 @@ body {
     font-family: Ubuntu, 'Segoe UI', sans-serif;
     font-weight: 200;
     display: grid;
-    grid-template-rows: minmax(105px, 15%) auto 10%;
+    grid-template-rows: minmax(200px, 20%) auto 10%;
     grid-template-columns: minmax(200px, 20%) 80%;
     grid-template-areas: "header header"
                          "nav main"
